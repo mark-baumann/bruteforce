@@ -5,6 +5,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      tags:
+        - instagram-bruteforce:latest
+    image: instagram-bruteforce:latest
     container_name: instagram-bruteforce
     environment:
       # Optional: Setze hier Umgebungsvariablen
