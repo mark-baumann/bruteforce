@@ -6,8 +6,9 @@ import time
 logger = logging.getLogger(__name__)
 
 class BrowserSession:
-    def __init__(self, tor_proxy=None):
+    def __init__(self, tor_proxy=None, headless=True):
         self.tor_proxy = tor_proxy
+        self.headless = headless
         self.driver = None
 
     def start(self):
@@ -20,6 +21,13 @@ class BrowserSession:
         options.add_argument("--disable-extensions")
         options.add_argument("--no-sandbox")
         options.add_argument("--incognito")
+        
+        # Headless Mode
+        if self.headless:
+            options.add_argument("--headless=new")
+            logger.info("Browser läuft im Headless-Modus (keine GUI)")
+        else:
+            logger.info("Browser läuft mit GUI")
 
         # Deaktiviere Automation Flags
         options.add_experimental_option("excludeSwitches", ["enable-automation"])

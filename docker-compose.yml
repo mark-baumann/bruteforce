@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  bruteforce:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: instagram-bruteforce
+    environment:
+      # Optional: Setze hier Umgebungsvariablen
+      PYTHONUNBUFFERED: 1
+    volumes:
+      # Binde die config.json Datei vom Host ein
+      - ./config.json:/app/config.json:ro
+      # Binde die Passwortliste vom Host ein
+      - ./passwords.txt:/app/passwords.txt:ro
+      # Logs-Verzeichnis für lokale Einsicht
+      - ./logs:/app/logs
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+    # Optional: Limits setzen
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+        reservations:
+          cpus: '1'
+          memory: 1G

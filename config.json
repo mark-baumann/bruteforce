@@ -1,0 +1,23 @@
+{
+  "instagram_username": "target_username_here",
+  "password_list_path": "/app/passwords.txt",
+  "email": {
+    "enabled": true,
+    "sender_email": "your-email@gmail.com",
+    "sender_password": "your-app-password",
+    "recipient_email": "test @ markb.de",
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587
+  },
+  "tor": {
+    "enabled": true,
+    "change_identity_interval": 5
+  },
+  "browser": {
+    "headless": true
+  },
+  "logging": {
+    "level": "INFO",
+    "log_file": "/app/logs/bruteforce.log"
+  }
+}

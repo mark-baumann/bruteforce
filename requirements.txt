@@ -3,3 +3,4 @@ psutil
 stem
 PySocks
 selenium
+python-dotenv
