@@ -1,12 +1,12 @@
 {
   "instagram_username": "_markbaumann",
-  "password_list_path": "/app/passwords.txt",
+  "password_list_path": "example-passwords.txt",
   "email": {
     "enabled": true,
-    "sender_email": "kontakt@markb.de",
-    "sender_password": "Mustang_<33",
-    "recipient_email": "kontakt@markb.de",
-    "smtp_server": "send.one.com",
+    "sender_email": "your-email@gmail.com",
+    "sender_password": "your-app-password",
+    "recipient_email": "test @ markb.de",
+    "smtp_server": "smtp.gmail.com",
     "smtp_port": 587
   },
   "tor": {
@@ -14,7 +14,7 @@
     "change_identity_interval": 5
   },
   "browser": {
-    "headless": false
+    "headless": true
   },
   "logging": {
     "level": "INFO",

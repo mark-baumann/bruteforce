@@ -3,10 +3,11 @@ FROM python:3.11-slim
 # Installiere erforderliche Systempakete
 RUN apt-get update && apt-get install -y \
     tor \
-    chromium-browser \
+    chromium \
     chromium-driver \
     wget \
     curl \
+    ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
 # Setze Arbeitsverzeichnis
