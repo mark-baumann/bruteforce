@@ -20,6 +20,11 @@ class BrowserSession:
         options.add_argument("--disable-infobars")
         options.add_argument("--disable-extensions")
         options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--disable-gpu")
+        options.add_argument("--no-first-run")
+        options.add_argument("--no-default-browser-check")
+        options.add_argument("--disable-sync")
         options.add_argument("--incognito")
         
         # Headless Mode
@@ -37,7 +42,11 @@ class BrowserSession:
             proxy_url = self.tor_proxy.get_proxy_url()
             #options.add_argument(f'--proxy-server={proxy_url}')
 
-        self.driver = webdriver.Chrome(options=options)
+        try:
+            self.driver = webdriver.Chrome(service=None, options=options)
+        except Exception as e:
+            logger.error(f"Fehler beim Starten von Chrome: {e}")
+            return False
 
         # Anti-Detection Script
         self.driver.execute_cdp_cmd('Page.addScriptToEvaluateOnNewDocument', {

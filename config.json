@@ -1,11 +1,11 @@
 {
-  "instagram_username": "_markbaumann",
+  "instagram_username": "mark",
   "password_list_path": "/app/passwords.txt",
   "email": {
     "enabled": true,
-    "sender_email": "kontakt@markb.de",
-    "sender_password": "Mustang_<33",
-    "recipient_email": "kontakt@markb.de",
+    "sender_email": "********",
+    "sender_password": "********",
+    "recipient_email": "********",
     "smtp_server": "send.one.com",
     "smtp_port": 587
   },
@@ -14,7 +14,7 @@
     "change_identity_interval": 5
   },
   "browser": {
-    "headless": false
+    "headless": true
   },
   "logging": {
     "level": "INFO",
